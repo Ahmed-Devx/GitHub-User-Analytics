@@ -1,12 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GitHub User Analytics</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-     
-</body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hero-section text-center">
+      <div class="container">
+        <h2 class="fw-bold fs-1 mb-4">
+          Explore
+          <span style="color: var(--accent-color)">GitHub</span> Intelligence
+        </h2>
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="Type github username..."
+            id="search"
+          />
+          <button onclick="fetchUser()">
+            <i class="fas fa-bolt me-1" id="searchBtn"></i>Analyze
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container pb-5">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="glass-card text-center">
+            <div class="profile-image-container">
+              <img src="images/frlIf.png" alt="User Avatar" />
+            </div>
+            <h3 class="fw-bold user-name">---</h3>
+            <p class="text-white small" id="user-name">---</p>
+
+            <p class="small px-2 bio" style="color: var(--text-muted)">---</p>
+
+            <div class="row g-2 mt-4">
+              <div class="col-4">
+                <div class="stat-box">
+                  <span class="stat-value Followers">---</span>
+                  <small class="text-value">Followers</small>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-box">
+                  <span class="stat-value Following">---</span>
+                  <small class="text-value">Following</small>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-box">
+                  <span class="stat-value Repos">---</span>
+                  <small class="text-value">Repos</small>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-box">
+                  <h5 class="stat-value" id="totalStars">---</h5>
+                  <small class="text-white">Total Stars</small>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-box text-center">
+                  <h5 class="stat-value" id="totalForks">---</h5>
+                  <small class="text-white">Total Forks</small>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-box text-center">
+                  <h5 class="stat-value" id="totalWatchers">---</h5>
+                  <small class="text-white">Watchers</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 text-start ps-3">
+              <div class="mb-2" id="location">---</div>
+              <div class="mb-2" id="joining">---</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="glass-card mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h5 class="fw-bold mb-0">Recent Repositories</h5>
+            </div>
+            <div class="row g-3" id="repo-cards">
+              <div class="col-md-6">
+                <div class="list-card h-100">
+                  <a href="#" class="repo-title">---</a>
+                  <p class="text-white small mt-2">---</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-code me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-star me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech"
+                      ><i class="fa-solid fa-eye me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-code-fork me-1"></i>
+                      ---
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="list-card h-100">
+                  <a href="#" class="repo-title">---</a>
+                  <p class="text-white small mt-2">---</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-code me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-star me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech"
+                      ><i class="fa-solid fa-eye me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-code-fork me-1"></i>
+                      ---
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="list-card h-100">
+                  <a href="#" class="repo-title">---</a>
+                  <p class="text-white small mt-2">---</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-code me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-star me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech"
+                      ><i class="fa-solid fa-eye me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-code-fork me-1"></i>
+                      ---
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="list-card h-100">
+                  <a href="#" class="repo-title">---</a>
+                  <p class="text-white small mt-2">---</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-code me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-star me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech"
+                      ><i class="fa-solid fa-eye me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-code-fork me-1"></i>
+                      ---
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="list-card h-100">
+                  <a href="#" class="repo-title">---</a>
+                  <p class="text-white small mt-2">---</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-code me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-star me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech"
+                      ><i class="fa-solid fa-eye me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-code-fork me-1"></i>
+                      ---
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="list-card h-100">
+                  <a href="#" class="repo-title">---</a>
+                  <p class="text-white small mt-2">---</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-code me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-star me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech"
+                      ><i class="fa-solid fa-eye me-1"></i>
+                      ---
+                    </span>
+                    <span class="badge-tech">
+                      <i class="fa-solid fa-code-fork me-1"></i>
+                      ---
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="d-grid gap-2 col-12 mx-auto">
+              <button class="showBtn" type="button" style="display: none">
+                <i class="fas fa-bolt me-1"></i>Show More...
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js"></script>
+  </body>
 </html>

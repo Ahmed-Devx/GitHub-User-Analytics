@@ -1,0 +1,165 @@
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --accent-color: #38bdf8;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass: rgba(255, 255, 255, 0.03);
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* Modern Glass Search Bar */
+.hero-section {
+  padding: 80px 0 50px;
+  background-color: var(--bg-color);
+}
+
+.search-container {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.search-container input {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  flex-grow: 1;
+  outline: none;
+}
+
+.search-container button {
+  background: var(--accent-color);
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.showBtn {
+  background: var(--accent-color);
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+  padding: 10px 25px;
+  color: var(--bg-color);
+}
+.search-container button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+.showBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Profile Card Glassmorphism */
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 30px;
+}
+
+.profile-image-container {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 20px;
+}
+
+.profile-image-container img {
+  width: 100%;
+  border-radius: 40px; /* Modern Squircle shape */
+  border: 3px solid var(--accent-color);
+  padding: 5px;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+.stat-box:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: block;
+  color: var(--accent-color);
+}
+.text-muted {
+  color: var(--accent-color);
+}
+
+/* Repo & Activity List */
+.list-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.list-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+.repo-title {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.badge-tech {
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--accent-color);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+}
+
+.scroll-v {
+  max-height: 600px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.activity-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 10px var(--accent-color);
+}
+.show {
+  display: block;
+}
+.block {
+  display: none;
+}
