@@ -14,7 +14,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Modern Glass Search Bar */
 .hero-section {
   padding: 80px 0 50px;
   background-color: var(--bg-color);
@@ -67,7 +66,6 @@ body {
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
 }
 
-/* Profile Card Glassmorphism */
 .glass-card {
   background: var(--card-bg);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -84,7 +82,7 @@ body {
 
 .profile-image-container img {
   width: 100%;
-  border-radius: 40px; /* Modern Squircle shape */
+  border-radius: 40px;
   border: 3px solid var(--accent-color);
   padding: 5px;
 }
@@ -112,7 +110,6 @@ body {
   color: var(--accent-color);
 }
 
-/* Repo & Activity List */
 .list-card {
   background: rgba(255, 255, 255, 0.02);
   border-radius: 16px;
@@ -156,10 +153,4 @@ body {
   border-radius: 50%;
   display: inline-block;
   box-shadow: 0 0 10px var(--accent-color);
-}
-.show {
-  display: block;
-}
-.block {
-  display: none;
 }
