@@ -90,12 +90,15 @@ Please ensure your code is clean and follows the existing project structure.
 
 ---
 
-## Author
+  ## 👨‍💻 Author
 
-**Muhammad Ahmed**
+**Muhammad Ahmed (AhmedDevx07)**
+🚀 Full Stack MERN Developer
+🎨 Passionate about Modern UI/UX & Scalable Web Apps
 
-* GitHub: [@Ahmed-Devx](https://github.com/Ahmed-Devx)
-* Portfolio: [Coming Soon]
+### 🌐 Connect With Me
 
----
+* 🐙 GitHub: https://github.com/AhmedDevx07
+* 💼 LinkedIn: https://linkedin.com/in/ahmeddevx07
+
  
